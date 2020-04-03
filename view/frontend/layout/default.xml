@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="head">
+            <action method="addJs"><script>cwf/lib/owl/owl.carousel.min.js</script></action>
+            <action method="addItem"><type>js_css</type><name>cwf/lib/owl/owl.carousel.min.css</name></action>
+            <action method="addItem"><type>js_css</type><name>cwf/lib/owl/owl.theme.default.min.css</name></action>
+        </referenceContainer>
+        <referenceContainer name="after.body.start">
+            <block class="Sga\Message\Block\Message" name="messages" template="Sga_Message::message.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

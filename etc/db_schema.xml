@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="sga_message_message" resource="default" engine="innodb" comment="MESSAGE message">
+        <column xsi:type="int" name="message_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column xsi:type="varchar" name="name" length="255" nullable="false" default="" comment="Name" />
+        <column xsi:type="text" name="text" nullable="false" default="" comment="Text" />
+        <column xsi:type="tinyint" name="is_active" padding="1" unsigned="true" nullable="false" identity="false" default="0" comment="Is active" />
+        <column xsi:type="int" name="position" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Position" />
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created at" />
+        <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated at" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="message_id"/>
+        </constraint>
+    </table>
+
+    <table name="sga_message_message_store" resource="default" engine="innodb" comment="MESSAGE message store">
+        <column xsi:type="int" name="message_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Message Id"/>
+        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" comment="Store Id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="message_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="FK_SGA_MESSAGE_MESSAGE_STORE_STORE_ID_STORE_ID"
+                    table="sga_message_message_store" column="store_id" referenceTable="store"
+                    referenceColumn="store_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="FK_SGA_MESSAGE_MESSAGE_STORE_MESSAGE_ID_MESSAGE_ID"
+                    table="sga_message_message_store" column="message_id" referenceTable="sga_message_message"
+                    referenceColumn="message_id" onDelete="CASCADE"/>
+    </table>
+
+
+</schema>

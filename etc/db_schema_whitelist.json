@@ -1,0 +1,29 @@
+{
+    "sga_message_message": {
+        "column": {
+            "name": true,
+            "text": true,
+            "is_active": true,
+            "position": true,
+            "created_at": true,
+            "updated_at": true,
+
+            "message_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+
+    "sga_message_message_store": {
+        "column": {
+            "message_id": true,
+            "store_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_SGA_MESSAGE_MESSAGE_STORE_STORE_ID_STORE_ID": true,
+            "FK_SGA_MESSAGE_MESSAGE_STORE_MESSAGE_ID_MESSAGE_ID": true
+        }
+    }
+}

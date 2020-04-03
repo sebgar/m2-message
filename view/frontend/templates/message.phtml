@@ -1,0 +1,36 @@
+<?php
+/** @var \Sga\Message\Block\Message $block */
+$configHelper = $this->getConfigHelper();
+if ($configHelper->isEnabled()) :
+    $messages = $this->getMessages();
+
+    $config = [
+        'config' => [
+            'items' => 1,
+            'autoHeight' => true,
+            'autoplay' => true,
+            'autoplayTimeout' => $configHelper->getTimeToDisplay(),
+            'autoplayHoverPause' => true,
+            'loop' => true,
+            'nav' => false,
+            'dots' => false,
+            'mouseDrag' => true
+        ],
+        'elements' => [
+            'container' => '#messages.owl-carousel'
+        ]
+    ];
+
+    if (count($messages) > 0) :
+?>
+<div id="messages" class="owl-carousel owl-theme">
+    <?php $i = 0; foreach ($messages as $message) : ?>
+        <div class="item"><?php echo $message->getText() ?></div>
+    <?php $i++; endforeach ?>
+</div>
+
+<script type="text/x-magento-init">
+{"#messages": {"Sga_Message/js/message": <?= $block->getJsonSerializer()->serialize($config) ?>}}
+</script>
+    <?php endif ?>
+<?php endif ?>
