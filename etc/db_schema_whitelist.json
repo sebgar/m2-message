@@ -7,14 +7,12 @@
             "position": true,
             "created_at": true,
             "updated_at": true,
-
             "message_id": true
         },
         "constraint": {
             "PRIMARY": true
         }
     },
-
     "sga_message_message_store": {
         "column": {
             "message_id": true,
@@ -23,7 +21,9 @@
         "constraint": {
             "PRIMARY": true,
             "FK_SGA_MESSAGE_MESSAGE_STORE_STORE_ID_STORE_ID": true,
-            "FK_SGA_MESSAGE_MESSAGE_STORE_MESSAGE_ID_MESSAGE_ID": true
+            "FK_SGA_MESSAGE_MESSAGE_STORE_MESSAGE_ID_MESSAGE_ID": true,
+            "SGA_MESSAGE_MESSAGE_STORE_STORE_ID_STORE_STORE_ID": true,
+            "FK_BA15703E87DE7DFC1ECEBB897782F9C1": true
         }
     }
 }

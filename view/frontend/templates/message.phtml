@@ -30,7 +30,7 @@ if ($configHelper->isEnabled()) :
 </div>
 
 <script type="text/x-magento-init">
-{"#messages": {"Sga_Message/js/message": <?= $block->getJsonSerializer()->serialize($config) ?>}}
+{"#messages": {"messages": <?= $block->getJsonSerializer()->serialize($config) ?>}}
 </script>
     <?php endif ?>
 <?php endif ?>

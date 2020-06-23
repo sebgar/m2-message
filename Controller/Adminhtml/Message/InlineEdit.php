@@ -1,23 +1,10 @@
 <?php
 namespace Sga\Message\Controller\Adminhtml\Message;
 
-use Magento\Backend\App\Action\Context;
-use Sga\Message\Api\MessageRepositoryInterface as ModelRepository;
 use Sga\Message\Controller\Adminhtml\Message as ParentClass;
 
 class InlineEdit extends ParentClass
 {
-    protected $_modelRepository;
-
-    public function __construct(
-        Context $context,
-        ModelRepository $modelRepository
-    ) {
-        $this->_modelRepository = $modelRepository;
-
-        parent::__construct($context);
-    }
-
     public function execute()
     {
         $resultJson = $this->_jsonFactory->create();

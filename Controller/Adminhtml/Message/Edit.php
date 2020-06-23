@@ -2,7 +2,6 @@
 namespace Sga\Message\Controller\Adminhtml\Message;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Sga\Message\Model\Message as Model;
 use Sga\Message\Controller\Adminhtml\Message as ParentClass;
 
 class Edit extends ParentClass implements HttpGetActionInterface
@@ -10,8 +9,7 @@ class Edit extends ParentClass implements HttpGetActionInterface
     public function execute()
     {
         $id = $this->getRequest()->getParam('message_id');
-        $model = $this->_objectManager->create(Model::class);
-
+        $model = $this->_modelFactory->create();
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {

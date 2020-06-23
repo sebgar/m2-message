@@ -3,7 +3,6 @@ namespace Sga\Message\Controller\Adminhtml\Message;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Sga\Message\Controller\Adminhtml\Message as ParentClass;
-use Sga\Message\Model\Message as Model;
 
 class Delete extends ParentClass implements HttpPostActionInterface
 {
@@ -20,7 +19,7 @@ class Delete extends ParentClass implements HttpPostActionInterface
         $id = $this->getRequest()->getParam('message_id');
         if ($id) {
             try {
-                $model = $this->_objectManager->create(Model::class);
+                $model = $this->_modelFactory->create();
                 $model->load($id);
                 $model->delete();
 

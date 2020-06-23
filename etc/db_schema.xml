@@ -3,9 +3,9 @@
 
     <table name="sga_message_message" resource="default" engine="innodb" comment="MESSAGE message">
         <column xsi:type="int" name="message_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
-        <column xsi:type="varchar" name="name" length="255" nullable="false" default="" comment="Name" />
-        <column xsi:type="text" name="text" nullable="false" default="" comment="Text" />
-        <column xsi:type="tinyint" name="is_active" padding="1" unsigned="true" nullable="false" identity="false" default="0" comment="Is active" />
+        <column xsi:type="varchar" name="name" length="255" nullable="false" comment="Name" />
+        <column xsi:type="text" name="text" nullable="false" comment="Text" />
+        <column xsi:type="tinyint" name="is_active" unsigned="true" nullable="false" identity="false" default="0" comment="Is active" />
         <column xsi:type="int" name="position" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Position" />
         <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created at" />
         <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated at" />
