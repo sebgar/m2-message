@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="after.body.start">
-            <block class="Sga\Message\Block\Message" name="messages" template="Sga_Message::message.phtml"/>
+            <block class="Sga\Message\Block\Message" name="sga.messages" template="Sga_Message::message.phtml"/>
         </referenceContainer>
     </body>
 </page>
